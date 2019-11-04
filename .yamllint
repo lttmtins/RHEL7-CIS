@@ -2,6 +2,8 @@
 
 extends: default
 
+ignore: tasks/old_content/*
+
 rules:
   braces:
     min-spaces-inside: 0

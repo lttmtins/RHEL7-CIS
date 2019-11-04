@@ -1,11 +1,11 @@
 ---
-rhel7cis_service_status: ['loaded','running...']
+rhel7cis_service_status: ['loaded', 'running...']
 
 # RHEL /sbin/service exit codes which are OK.
 # 0 - service running
 # 3 - service found, but stopped.
 # 6 - service not found
-rhel7cis_service_status_ok_exit_codes: [0,3,6]
+rhel7cis_service_status_ok_exit_codes: [0, 3, 6]
 
 # defaults file for RHEL7-CIS
 rhel7cis_skip_for_travis: false
@@ -339,26 +339,26 @@ rhel7cis_ypbind_required: false
 rhel7cis_time_synchronization: chrony
 
 rhel7cis_time_synchronization_servers:
-    - 0.pool.ntp.org
-    - 1.pool.ntp.org
-    - 2.pool.ntp.org
-    - 3.pool.ntp.org
+  - 0.pool.ntp.org
+  - 1.pool.ntp.org
+  - 2.pool.ntp.org
+  - 3.pool.ntp.org
 # 3.4.1 Ensure TCP Wrappers is installed (Scored)
 rhel7cis_tcpwrapper: tcp_wrappers
 # rhel7cis_tcpwrapper: tcpd
 
 # 3.4.2 | PATCH | Ensure /etc/hosts.allow is configured
 rhel7cis_host_allow:
-    - "10.0.0.0/255.0.0.0"
-    - "172.16.0.0/255.240.0.0"
-    - "192.168.0.0/255.255.0.0"
+  - "10.0.0.0/255.0.0.0"
+  - "172.16.0.0/255.240.0.0"
+  - "192.168.0.0/255.255.0.0"
 
 rhel7cis_firewall: firewalld
 # rhel7cis_firewall: iptables
 
 rhel7cis_firewall_services:
-    - ssh
-    - dhcpv6-client
+  - ssh
+  - dhcpv6-client
 
 # Warning Banner Content (issue, issue.net, motd)
 rhel7cis_warning_banner: |
@@ -368,36 +368,36 @@ rhel7cis_warning_banner: |
 ## Section4 vars
 
 rhel7cis_auditd:
-    admin_space_left_action: halt
-    max_log_file_action: keep_logs
+  admin_space_left_action: halt
+  max_log_file_action: keep_logs
 
 rhel7cis_logrotate: "daily"
 
 ## Section5 vars
 
 rhel7cis_sshd:
-    clientalivecountmax: 3
-    clientaliveinterval: 300
-    ciphers: "aes256-ctr,aes192-ctr,aes128-ctr"
-    macs: "hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com"
-    logingracetime: 60
-    # - make sure you understand the precedence when working with these values!!
-    #allowusers:
-    #allowgroups: systems dba
-    #denyusers:
-    #denygroups:
+  clientalivecountmax: 3
+  clientaliveinterval: 300
+  ciphers: "aes256-ctr,aes192-ctr,aes128-ctr"
+  macs: "hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com"
+  logingracetime: 60
+  # - make sure you understand the precedence when working with these values!!
+  #allowusers:
+  #allowgroups: systems dba
+  #denyusers:
+  #denygroups:
 
 rhel7cis_pass:
-    max_days: 90
-    min_days: 7
-    warn_age: 7
+  max_days: 90
+  min_days: 7
+  warn_age: 7
 
 # Syslog system
 rhel7cis_syslog: rsyslog
 #rhel7cis_syslog: syslog-ng
 
 rhel7cis_vartmp:
-    source: /tmp
-    fstype: none
-    opts: "defaults, nodev, nosuid, noexec, bind"
-    enabled: no
+  source: /tmp
+  fstype: none
+  opts: "defaults, nodev, nosuid, noexec, bind"
+  enabled: no
