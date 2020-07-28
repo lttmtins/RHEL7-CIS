@@ -15,6 +15,11 @@
   tags:
       - always
 
+- name: Populate service facts
+  service_facts:
+  tags:
+    - always
+
 - include: prelim.yml
   become: yes
   tags:

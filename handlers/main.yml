@@ -50,6 +50,7 @@
   service:
       name: xinetd
       state: restarted
+  when: "'xinetd' in services"
 
 - name: restart sshd
   become: yes
